@@ -11,6 +11,8 @@ class Pabrik extends Model
     
     public function obat()
     {
-        return $this->belongsTo(Obat::class);
+        return $this->HasMany(Obat::class);
     }
+
+    protected $guarded = ['id'];
 }

@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('pabriks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('obat_id');
             $table->string('nama_pabrik');
             $table->string('alamat_pabrik');
             $table->string('email_pabrik');

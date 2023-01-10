@@ -8,17 +8,26 @@
                 <br>
                 <div class="card bg-light">
                     <div class="card-body">
-                        <form method="post" action="/obat/add">
+                        <form method="post" action="/obat/add ">
                             @csrf
-
-                            <br>
                             <div class="form-group">
                                 <label for="" class="form-label">Nama Obat</label>
                                 <input class="form-control" id="nama_obat" name="nama_obat"value="{{ old('nama_obat') }}">
                             </div>
+
                             <br>
                             <div class="form-group">
-                                <label for="" class="form-label">Merek</label>
+                                <label for="" class="form-label">nama pabrik</label>
+                                <select class="form-select" name="pabrik_id" id="pabrik_id">
+                                    @foreach ($pabrik as $pabriks)
+                                        <option value="{{ $pabriks->id }}">{{ $pabriks->nama_pabrik }}</option>
+                                    @endforeach
+                                </select>
+                                {{-- <input doctor="form-control"id="kode_pasien" name="kode_pasien" value="{{ $siswa->kelas->kelas }}"> --}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="form-label">Merek Obat</label>
                                 <input class="form-control" id="merek_obat"
                                     name="merek_obat"value="{{ old('merek_obat') }}">
                             </div>

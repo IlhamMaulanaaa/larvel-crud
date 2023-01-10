@@ -13,10 +13,12 @@ class Obat extends Model
         'nama_obat',
         'merek_obat',
         'tanggal_kadaluarsa',
+        'pabrik_id'
     ];
 
     public function pabrik()
     {
-        return $this->hasMany(Pabrik::class);
+        return $this->belongsTo(Pabrik::class);
     }
+    
 }

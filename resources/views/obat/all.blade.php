@@ -28,7 +28,7 @@
                             <tbody>
                                 @foreach ($data_obat as $obat)
                                     <tr align="center">
-                                        <td class="align-middle"><?= $obat->id ?></td>
+                                        {{-- <td class="align-middle"><?= $obat->id ?></td> --}}
                                         <td class="text-start align-middle"><?= $obat->nama_obat ?></td>
                                         <td class="text-start align-middle"><?= $obat->merek_obat ?></td>
                                         <td class="text-start align-middle"><?= $obat->tanggal_kadaluarsa ?></td>
