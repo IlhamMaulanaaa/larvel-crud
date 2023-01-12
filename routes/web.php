@@ -6,6 +6,8 @@ use App\Http\Controllers\ObatController;
 use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\registercontroller;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\Admincontroller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +56,8 @@ route::group(['prefix' => '/register'], function () {
 
 route::group(['prefix' => '/session'], function () {
     Route::get('/logout', [sessionController::class, 'logout']);
+});
+
+Route::get('/admin', function () {
+    return view('admin.index');
 });

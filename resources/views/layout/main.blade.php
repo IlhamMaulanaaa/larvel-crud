@@ -10,6 +10,7 @@
 <body class="bg-dark">
     @if (Auth::check())
         @include('partial.navbar')
+        {{-- @include('admin.index') --}}
     @endif
 <div class="container">
     @yield('container')
