@@ -1,5 +1,5 @@
 
-@extends('layout.main')
+@extends('admin.index')
 @section('container')
     <br>
     <div class="container">
@@ -29,6 +29,7 @@
                                 @foreach ($data_obat as $obat)
                                     <tr align="center">
                                         {{-- <td class="align-middle"><?= $obat->id ?></td> --}}
+                                        <td class="text-start align-middle"><?= $obat->id ?></td>
                                         <td class="text-start align-middle"><?= $obat->nama_obat ?></td>
                                         <td class="text-start align-middle"><?= $obat->merek_obat ?></td>
                                         <td class="text-start align-middle"><?= $obat->tanggal_kadaluarsa ?></td>

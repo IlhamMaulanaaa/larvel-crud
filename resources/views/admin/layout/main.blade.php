@@ -14,7 +14,7 @@
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark">
 {{-- header --}}
     @include('admin.layout.header')
     
