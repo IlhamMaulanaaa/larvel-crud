@@ -58,13 +58,20 @@ route::group(['prefix' => '/session'], function () {
     Route::get('/logout', [sessionController::class, 'logout']);
 });
 
+// Route::get('/admin', function () {
+//     return view('admin.index');
+// })->middleware('auth');
+
+// Route::post('/admin', function () {
+//     return view('admin.index');
+// });
 Route::get('/admin', function () {
     return view('admin.index');
-})->middleware('auth');
+});
 
 
 
-Route::middleware(['auth', 'user-role:user'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/obat/all', [ObatController::class, 'index']);
     Route::get('/obat/detail/{obat}', [ObatController::class, 'show']);
     Route::get('/obat/create', [ObatController::class, 'create']);
@@ -73,7 +80,7 @@ Route::middleware(['auth', 'user-role:user'])->group(function () {
     Route::post('/obat/update/{obat}', [ObatController::class, 'update']);
     Route::delete('/obat/delete/{obat}', [ObatController::class, 'destroy']);
 });
-Route::middleware(['auth', 'user-role:admin'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/pabrik/all', [PabrikController::class, 'index']);
     Route::get('/pabrik/detail/{pabrik}', [PabrikController::class, 'show']);
     Route::get('/pabrik/create', [PabrikController::class, 'create']);
@@ -82,3 +89,5 @@ Route::middleware(['auth', 'user-role:admin'])->group(function () {
     Route::post('/pabrik/update/{pabrik}', [PabrikController::class, 'update']);
     Route::delete('/pabrik/delete/{pabrik}', [PabrikController::class, 'destroy']);
 });
+
+

@@ -1,4 +1,5 @@
-@extends('admin.index')
+{{-- @extends('admin.index') --}}
+@extends('layout.main')
 @section('container')
     <br>
     <div class="container">
@@ -25,8 +26,8 @@
                                     <th scope="col" class="text-start">produk</th>
                                     <th scope="col">Aksi</th>
                                     <!-- <th scope="col">Tanggal Lahir</th>
-                                                                    <th scope="col">Foto</th>
-                                                                    <th scope="col">Aksi</th> -->
+                                                                        <th scope="col">Foto</th>
+                                                                        <th scope="col">Aksi</th> -->
 
                                 </tr>
                             </thead>
@@ -34,10 +35,10 @@
                                 @foreach ($data_pabrik as $pabrik)
                                     <tr align="center">
                                         <td><?= $pabrik->id ?></td>
-                                        <td class="text-start"><?= $pabrik->nama_pabrik?></td>
-                                        <td class="text-start"><?= $pabrik->alamat_pabrik?></td>
-                                        <td class="text-start"><?= $pabrik->email_pabrik?></td>
-                                        <td class="text-start"><?= $pabrik->produk?></td>
+                                        <td class="text-start"><?= $pabrik->nama_pabrik ?></td>
+                                        <td class="text-start"><?= $pabrik->alamat_pabrik ?></td>
+                                        <td class="text-start"><?= $pabrik->email_pabrik ?></td>
+                                        <td class="text-start"><?= $pabrik->produk ?></td>
                                         <td>
                                             <a type="button" class="btn btn-warning"
                                                 href="detail/{{ $pabrik->id }}">Detail
