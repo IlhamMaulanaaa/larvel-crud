@@ -1,5 +1,5 @@
-@extends('admin.index')
-{{-- @extends('layout.main') --}}
+{{-- @extends('admin.index') --}}
+@extends('layout.main')
 @section('container')
     <br>
     <div class="container">
@@ -24,10 +24,9 @@
                                     <th scope="col" class="text-start">alamat</th>
                                     <th scope="col" class="text-start">email</th>
                                     <th scope="col" class="text-start">produk</th>
-                                    <th scope="col">Aksi</th>
                                     <!-- <th scope="col">Tanggal Lahir</th>
-                                                                        <th scope="col">Foto</th>
-                                                                        <th scope="col">Aksi</th> -->
+                                                                            <th scope="col">Foto</th>
+                                                                            <th scope="col">Aksi</th> -->
 
                                 </tr>
                             </thead>
@@ -39,20 +38,6 @@
                                         <td class="text-start"><?= $pabrik->alamat_pabrik ?></td>
                                         <td class="text-start"><?= $pabrik->email_pabrik ?></td>
                                         <td class="text-start"><?= $pabrik->produk ?></td>
-                                        <td>
-                                            <a type="button" class="btn btn-warning"
-                                                href="detail/{{ $pabrik->id }}">Detail
-                                                Page</a>
-                                            <a type="button" class="btn btn-primary" href="edit/{{ $pabrik->id }}">Edit
-                                                Page</a>
-                                            <form action="/pabrik/delete/{{ $pabrik->id }}" method="post"
-                                                class="d-inline">
-                                                @method('delete')
-                                                @csrf
-                                                <button class="btn btn-danger"
-                                                    onclick="return  confirm('Apakah Anda Yakin') ">Hapus</button>
-                                            </form>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

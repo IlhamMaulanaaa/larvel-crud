@@ -10,10 +10,9 @@ class ObatController extends Controller
 {
     public function index()
     {
-       return view('obat.all', [
-           "data_obat" => Obat::all()
-       ]);
-
+        return view('obat.all', [
+            "data_obat" => Obat::all()
+        ]);
     }
     public function show(Obat $obat)
     {

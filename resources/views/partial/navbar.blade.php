@@ -7,9 +7,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link text-light" href="/admin">admin</a>
-                <a class="nav-link text-light" href="/pabrik/all">pabrik</a>
-                <a class="nav-link text-light" href="/obat/all">obat</a>
+                <a class="nav-link text-light" href="">admin</a>
+                <a class="nav-link text-light" href="/dashboard/pabrik/all">pabrik</a>
+                <a class="nav-link text-light" href="/dashboard/obat/all">obat</a>
                 <a class="nav-link disabled text-light">About</a>
                 <a class="nav-link text-light" href="/login/index">login</a>
                 <a class="nav-link text-light" href="/register/index">register</a>
@@ -34,7 +34,8 @@
                         <li>
                             <form action="/session/logout" method="GET">
                                 @csrf
-                                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"><a href="/session/logout">LogOut</a></i></button>
+                                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"><a
+                                            href="/session/logout">LogOut</a></i></button>
                             </form>
                         </li>
                     </ul>

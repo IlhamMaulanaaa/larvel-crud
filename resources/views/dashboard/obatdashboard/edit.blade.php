@@ -16,7 +16,7 @@
                                 <label for="" class="form-label">nama pabrik</label>
                                 <select class="form-select" name="pabrik_id">
                                     @foreach ($pabrik as $pabriks)
-                                        @if (old('pabrik_id', $obat->pabrik_id == $pabriks->id))
+                                        @if (old('pabrik_id', $pasien->pabrik_id == $pabriks->id))
                                             <option name="pabrik_id" value="{{ $pabriks->id }}" selected>{{ $pabriks->nama_pabrik }}
                                             </option>
                                         @endif

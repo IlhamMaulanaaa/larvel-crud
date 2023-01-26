@@ -7,7 +7,7 @@ use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\registercontroller;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\Admincontroller;
-
+use App\Http\Controllers\dashboard\dashboardcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Route::get('/', function () {
 // });
 
 route::group(['prefix' => '/login'], function () {
-    Route::get('/all', [logincontroller::class, 'index']);
+    Route::get('/all', [logincontroller::class, 'index'])->name('login')->middleware('guest');
     Route::post('/login', [logincontroller::class, 'login']);
 });
 route::group(['prefix' => '/register'], function () {
@@ -90,4 +90,12 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/pabrik/delete/{pabrik}', [PabrikController::class, 'destroy']);
 });
 
+Route::group(['prefix' => '/dashboard'], function () {
+    Route::get('/obat/all', [dashboardcontroller::class, 'index']);
+    Route::get('/obat/detail/{obat}', [dashboardcontroller::class, 'show']);
+});
 
+Route::group(['prefix' => '/dashboard'], function () {
+    Route::get('/pabrik/all', [dashboardcontroller::class, 'indexpabrik']);
+    Route::get('/pabrik/detail/{pabrik}', [dashboardcontroller::class, 'showpabrik']);
+});

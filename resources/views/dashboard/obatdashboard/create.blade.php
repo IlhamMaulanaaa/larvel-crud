@@ -4,38 +4,38 @@
     <div class="container">
         <div class="row">
             <div class="col-ad-12">
-                <h3 align="center" class=" text-light">Edit Data Obat</h3>
+                <h3 align="center" class=" text-light">Tambah Data Obat</h3>
                 <br>
                 <div class="card bg-light">
                     <div class="card-body">
-                        <form method="post" action="/obat/update/ {{ $obat->id }}">
+                        <form method="post" action="/obat/add ">
                             @csrf
+                            <div class="form-group">
+                                <label for="" class="form-label">Nama Obat</label>
+                                <input class="form-control" id="nama_obat" name="nama_obat"value="{{ old('nama_obat') }}">
+                            </div>
 
                             <br>
                             <div class="form-group">
                                 <label for="" class="form-label">nama pabrik</label>
-                                <select class="form-select" name="pabrik_id">
+                                <select class="form-select" name="pabrik_id" id="pabrik_id">
                                     @foreach ($pabrik as $pabriks)
-                                        @if (old('pabrik_id', $obat->pabrik_id == $pabriks->id))
-                                            <option name="pabrik_id" value="{{ $pabriks->id }}" selected>{{ $pabriks->nama_pabrik }}
-                                            </option>
-                                        @endif
-                                        <option name="pabrik_id" value="{{ $pabriks->id }}">{{ $pabriks->nama_pabrik }}</option>
+                                        <option value="{{ $pabriks->id }}">{{ $pabriks->nama_pabrik }}</option>
                                     @endforeach
                                 </select>
+                                {{-- <input doctor="form-control"id="kode_pasien" name="kode_pasien" value="{{ $siswa->kelas->kelas }}"> --}}
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="" class="form-label">Alamat</label>
+                                <label for="" class="form-label">Merek Obat</label>
                                 <input class="form-control" id="merek_obat"
-                                    name="merek_obat"value="{{ old('merek_obat', $obat->merek_obat) }}" required>
+                                    name="merek_obat"value="{{ old('merek_obat') }}">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="" class="form-label">Tanggal</label>
-                                <input class="form-control" id="tanggal_kadaluarsa" type="date"
-                                    name="tanggal_kadaluarsa"value="{{ old('tanggal_kadaluarsa', $obat->tanggal_kadaluarsa) }}"
-                                    required>
+                                <input type="date" class="form-control" id="tanggal_kadaluarsa" name="tanggal_kadaluarsa"
+                                    value="{{ old('tanggal_kadaluarsa') }}">
                             </div>
                             <br>
                             <div class="float-end">
